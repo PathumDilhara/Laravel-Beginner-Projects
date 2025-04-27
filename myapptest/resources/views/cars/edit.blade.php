@@ -9,7 +9,7 @@
 <body>
     <h1>Edit car page</h1>
 
-    <form class="form-horizontal" method="post" action="update">
+    <form class="form-horizontal" method="post" action="/cars/{{$car->id}}/update">
         
         @csrf
         @method('put')
@@ -32,5 +32,13 @@
         <div>
             <button type="submit">update</button>
         </div>
+    </form>
+
+    <form class="form-horizontal" method="post" action="/cars/{{$car->id}}/delete">
+        @csrf
+        @method('delete')
+
+        <button type="delete">Delete</button>
+    </form>
 </body>
 </html>

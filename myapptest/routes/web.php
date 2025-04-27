@@ -18,3 +18,5 @@ Route::get('/cars/{car}', [CarController::class, 'show']);
 Route::get('/cars/{car}/edit', [CarController::class, 'edit']);
 
 Route::put('/cars/{car}/update', [CarController::class, 'update']);
+
+Route::delete('/cars/{car}/delete', [CarController::class, 'destroy']);

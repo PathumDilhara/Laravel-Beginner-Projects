@@ -32,6 +32,14 @@ class CarController extends Controller
 
         $car->save();
 
+        // $validatedData = request()->validate([
+        //     'name' => 'required',
+        //     'color' => ['required', 'regex:/[a-zA-Z]+%+$/'],
+        //     'company' => 'required',
+        // ]);
+
+        // $car->create($validatedData);
+
        return redirect('/create');
     }
 
@@ -62,6 +70,7 @@ class CarController extends Controller
      // Remove the specified resource from storage.
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+        return redirect('/cars');
     }
 }

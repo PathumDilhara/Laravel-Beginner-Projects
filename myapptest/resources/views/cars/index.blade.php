@@ -26,6 +26,10 @@
         </tbody>
     </table>
 
+    <form class="form-horizontal" method="get" action="create">
+        <button type="createnew">Create new</button>
+    </form>
+
 
 </body>
 
