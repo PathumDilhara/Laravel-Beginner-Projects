@@ -13,4 +13,8 @@ Route::get('/create', [CarController::class, 'create']);
 
 Route::post('/create', [CarController::class, 'store']);
 
-Route::get('/cars/{carid}', [CarController::class, 'show']);
+Route::get('/cars/{car}', [CarController::class, 'show']);
+
+Route::get('/cars/{car}/edit', [CarController::class, 'edit']);
+
+Route::put('/cars/{car}/update', [CarController::class, 'update']);

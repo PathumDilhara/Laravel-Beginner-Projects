@@ -7,31 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Create car page</h1>
+    <h1>Edit car page</h1>
 
-    <form class="form-horizontal" method="post" action="create">
+    <form class="form-horizontal" method="post" action="update">
         
         @csrf
+        @method('put')
 
         <div>
             <label for="name"> Car Name : </label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" value="{{$car->name}}" required>
         </div>
 
         <div>
             <label for="color">Color : </label>
-            <input type="text" id="color" name="color" required>
+            <input type="text" id="color" name="color" value="{{$car->color}}" required>
         </div>
 
         <div>
             <label for="company">Company</label>
-            <input type="text" id="company" name="company" required>
+            <input type="text" id="company" name="company" value="{{$car->company}}" required>
         </div>
 
         <div>
-            <button type="submit">Submit</button>
+            <button type="submit">update</button>
         </div>
-        
-        {{-- <a href="/cars/public/cars">Show cars</a> --}}
 </body>
 </html>

@@ -10,8 +10,8 @@ class CarController extends Controller
      // Display a listing of the resource.
     public function index()
     {
-        $name = 'Lmaborghini';
-        return view('cars.index', ['name'=> $name]);
+        $cars = car::all();
+        return view('cars.index', compact('cars'));
     }
 
      // Show the form for creating a new resource.
@@ -38,19 +38,25 @@ class CarController extends Controller
      // Display the specified resource.
     public function show(Car $car)
     {
-        return view('cars.show');
+        return view('cars.show', compact('car'));
     }
 
      // Show the form for editing the specified resource.
     public function edit(Car $car)
     {
-        //
+        return view('cars.edit', compact('car'));
     }
 
      // Update the specified resource in storage.
     public function update(Request $request, Car $car)
     {
-        //
+        $car->name = request('name');
+        $car->color = request('color');
+        $car->company = request('company');
+
+        $car->save();
+
+       return redirect('/cars');
     }
 
      // Remove the specified resource from storage.
